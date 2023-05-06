@@ -1,23 +1,27 @@
 
 import Image from "next/image";
-import sizeOf from "image-size"; 
 
-export async function MainCard() {
-
-  const dimensions = sizeOf("https://guiaviagensbrasil.com/imagens/Imagem%20do%20mar%20calma%20e%20belo%20da%20Praia%20da%20Engenhoca-Itacar%C3%A9-Bahia-BA.jpg");
-
-  console.log(dimensions);
+export function MainCard() {
   
   return (
-    <div className="w-100 border h-80 relative rounded-md">
+    <div className={`
+      w-full h-[calc((30/100)*75vw)] border rounded-md relative
+      flex items-end text-4xl font-bold text-white
+      hover:bg-[length:110%] transition duration-500
+      group overflow-hidden cursor-pointer
+    `}>
       <Image 
-        alt={"post info"} 
-        src={"https://guiaviagensbrasil.com/imagens/Imagem%20do%20mar%20calma%20e%20belo%20da%20Praia%20da%20Engenhoca-Itacar%C3%A9-Bahia-BA.jpg"}
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{ width: 'auto', height: '100%' }} // optional
+        src={"https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/05/GettyImages-1487947337.jpg?w=1024"}
+        fill={true}
+        alt={"main news picture"}
+        className={"transition object-cover absolute group-hover:scale-105"}
       />
+      <div className={`
+        bg-gradient-to-t from-[#000000ae] from-10% via-[#00000067] via-75% to-transparent
+        absolute p-4
+      `}>
+        Coroação do rei Charles III será neste sábado: veja como será o roteiro da cerimônia
+      </div>
     </div>
   );
 }
