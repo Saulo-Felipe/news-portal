@@ -1,18 +1,21 @@
+import Link from "next/link";
 import { SearchBar } from "./SearchBar";
-import { SideMenu } from "./SideMenu";
+import { SessionDropdown } from "./SessionDropdown";
 
 
 export function Header() {
   console.log("server rending")
 
   return (
-    <header className="flex border items-center justify-between p-2">
+    <header className="flex border items-center justify-between p-2 px-10">
 
-      <div className="p-2 bg-black text-white cursor-pointer">Portal News</div>
+      <Link href={"/"}>
+        <div className="p-2 bg-black text-white cursor-pointer">Portal News</div>
+      </Link>
 
       <SearchBar />
 
-      <SideMenu />
+      <SessionDropdown />
     </header>
   )
 }

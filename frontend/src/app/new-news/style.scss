@@ -1,0 +1,9 @@
+html {
+  height: -webkit-fill-available;
+
+  body {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+  }
+}
